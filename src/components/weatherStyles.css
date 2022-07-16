@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Outfit';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background{
+    /* background-image: url('/src/assets/clouds.jpg'); */
+    background-position: center;
+    background-size: cover;
+    transition: ease-in .2s;
+}
+
+.container{
+    position: relative;
+    max-width: 700px;
+    height: 100vh;
+    padding: 3rem 10%;
+    color: white;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.container::before{
+    content: "";
+    background-color: rgba(255,255,255,.1);
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+h1{
+    font-size: 5.5rem;
+}
+
+.search{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    transition: 1s;
+}
+
+.search.not-show{
+    margin-top: 30%;
+}
+
+input{
+    height: 30px;
+    width: 70%;
+    padding: 1rem;
+    outline: none;
+    border: #fff 1px solid;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+input::placeholder{
+    color: #fff;
+}
+
+.top{
+    position: relative;
+    margin: 5rem 0;
+}
+
+.temp {
+    display: flex;
+}
+
+.temp img{
+    width: 110px;
+}
+
+.descriptions{
+    /* background-color: royalblue; */
+    position: absolute;
+    right: 0;
+    margin-top: -2rem;
+    transform: rotate(-90deg);
+}
+
+.bottom{
+    background-color: royalblue;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    bottom: -15%;
+    text-align: center;
+    padding: .5rem;
+}
+
+.bottom p{
+    font-weight: 200;
+    font-size: 1.15rem;
+}
+
+.bottom p.data{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.welcome{
+    /* background-color: rosybrown; */
+    position: relative;
+    width: 100%;
+    text-align: center;
+    /* top: 20%;
+    transform: translate(0, -30%); */
+    opacity: 0;
+    transition: 1s;
+}
+
+.welcome.not-show{
+    opacity: 100%;
+}
+
+.welcome h1{
+    font-size: 2rem;
+}
+
+.welcome p {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width:600px){
+    .temp h1 {
+        font-size: 4.5rem;
+    }    
+    .temp img{
+        width: 80px;
+    }
+    .descriptions{
+        right: -1.2rem;
+    }
+}
