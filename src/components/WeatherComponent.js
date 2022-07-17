@@ -10,7 +10,7 @@ function WeatherComponent() {
     const [isShow, setIsShow] = useState(false);
 
 
-    const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}`;
+    const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.REACT_APP_API_KEY}`;
     const getWeather = async(event) => {
         if (event.key === 'Enter'){
             setIsShow(true);
@@ -52,7 +52,7 @@ function WeatherComponent() {
                                 {dataWeather.name ? <p>{dataWeather.name}</p> : 'Location not Found. Please insert again !' }
                             </div>
                             <div className="temp">
-                                {dataWeather.main ? <h1>{dataWeather.main.temp.toFixed()}°F</h1> : null}
+                                {dataWeather.main ? <h1>{dataWeather.main.temp}°C</h1> : null}
                                 {dataWeather.weather ? <img src={"http://openweathermap.org/img/wn/" + dataWeather.weather[0].icon + "@2x.png"}/> : null }
                             </div>
                             <div className="descriptions">
@@ -61,7 +61,7 @@ function WeatherComponent() {
                         </div>
                         <div className="bottom">
                             <div className="feels">
-                                {dataWeather.main ? <p className='data'>{dataWeather.main.feels_like.toFixed()}°F</p> : null }
+                                {dataWeather.main ? <p className='data'>{dataWeather.main.feels_like.toFixed()}°C</p> : null }
                                 <p>Feels Like</p>
                             </div>
                             <div className="humadity">
