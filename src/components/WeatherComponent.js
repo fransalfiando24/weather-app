@@ -52,7 +52,7 @@ function WeatherComponent() {
                                 {dataWeather.name ? <p>{dataWeather.name}</p> : 'Location not Found. Please insert again !' }
                             </div>
                             <div className="temp">
-                                {dataWeather.main ? <h1>{dataWeather.main.temp}°C</h1> : null}
+                                {dataWeather.main ? <h1>{dataWeather.main.temp.toFixed()}°C</h1> : null}
                                 {dataWeather.weather ? <img src={"http://openweathermap.org/img/wn/" + dataWeather.weather[0].icon + "@2x.png"}/> : null }
                             </div>
                             <div className="descriptions">
